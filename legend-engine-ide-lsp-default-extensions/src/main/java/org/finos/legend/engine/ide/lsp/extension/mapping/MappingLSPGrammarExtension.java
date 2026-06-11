@@ -48,6 +48,7 @@ import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.mapping
 import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.mapping.mappingTest.MappingTest;
 import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.mapping.mappingTest.MappingTestSuite;
 import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.mapping.mappingTest.StoreTestData;
+import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.mapping.modelJoin.ModelJoinPropertyMapping;
 import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.mapping.xStore.XStoreAssociationMapping;
 import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.mapping.xStore.XStorePropertyMapping;
 import org.finos.legend.engine.protocol.pure.v1.model.packageableElement.store.modelToModel.mapping.PureInstanceClassMapping;
@@ -329,6 +330,12 @@ public class MappingLSPGrammarExtension extends AbstractLegacyParserLSPGrammarEx
 
             @Override
             public Stream<Optional<LegendReferenceResolver>> visit(XStorePropertyMapping xStorePropertyMapping)
+            {
+                return Stream.empty();
+            }
+
+            @Override
+            public Stream<Optional<LegendReferenceResolver>> visit(ModelJoinPropertyMapping modelJoinPropertyMapping)
             {
                 return Stream.empty();
             }
